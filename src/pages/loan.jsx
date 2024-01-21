@@ -251,6 +251,28 @@ const Loan = () => {
                 </div> */}
               </div>
             </div>
+            <div>
+              <h1 className="font-bold text-xl">Mortgage property details</h1>
+              <hr />
+              <div className=" gap-4 max-md:grid-cols-1 lg:gap-6 py-4">
+                <div className="flex items-center gap-2">
+                  <label>Do you have a property to mortgage with us?</label>
+                  <input type="text" name="property" id="property" />
+                  <label>Where is it located?</label>
+                  <input
+                    type="text"
+                    name="property located"
+                    id="property located"
+                  />
+                  <label>What is the estimated value of the property?</label>
+                  <input
+                    type="text"
+                    name="estimated value"
+                    id="estimated value"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div>
             <button
