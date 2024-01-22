@@ -6,9 +6,9 @@ import { useForm, ValidationError } from "@formspree/react";
 
 
 const Loan = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   useEffect(() => {
     Aos.init();
@@ -58,12 +58,13 @@ const Loan = () => {
           action="https://formspree.io/f/mrgnbyzn"
           method="POST"
           onSubmit={handleSubmit}
+          className="w-screen flex flex-col items-center"
         >
           <h1 className="text-2xl lg:text-3xl font-bold text-center max-md:text-[26px] py-6 uppercase">
             Register for a loan&#x21;
           </h1>
-          <div className="w-[1000px] max-md:w-screen max-md:px-5 flex flex-col gap-7 lg:gap-10">
-            <div className="max-md:flex max-md:w-full max-md:flex-col max-md:items-center max-md:justify-center ">
+          <div className="w-[1000px]  max-md:w-screen max-md:p-5 flex flex-col gap-7 lg:gap-10">
+            <div className="max-md:flex max-md:w-full max-md:flex-col max-md:items-center max-md:justify-center">
               <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px]">Personal Information</h1>
               <hr className="w-full max-md:w-screen" />
               <div className="flex max-md:flex-col max-md:items-start py-6 lg:py-12 justify-between max-md:w-full">
@@ -96,12 +97,12 @@ const Loan = () => {
             <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6">
               <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px]">Loan Information</h1>
               <hr className="w-full max-md:w-screen" />
-              <div className="flex flex-col gap-6 lg:gap-6 py-4 lg:py-12 max-md:w-screen max-md:px-6">
-                <div className="flex max-md:flex-col items-center max-md:items-start gap-2">
+              <div className="flex flex-col gap-6 lg:gap-10 py-4 lg:py-12 max-md:w-screen max-md:px-6">
+                <div className="flex max-md:flex-col items-center gap-2  max-md:items-start lg:gap-0 lg:justify-between">
                   <label>1.&nbsp;Loan Amount in LKR</label>
                   <input id="amount" name="amount" type="text" required></input>
                 </div>
-                <div className="flex max-md:flex-col gap-6 items-center max-md:items-start">
+                <div className="flex max-md:flex-col items-center max-md:items-start gap-2 lg:gap-0 lg:justify-between">
                   <label>2.&nbsp;Purpose of taking the loan</label>
                   <select
                     onChange={handlePurposeChange}
@@ -134,10 +135,10 @@ const Loan = () => {
                 )}
               </div>
             </div>
-            <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6" >
-              <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px]">Migration History</h1>
+            <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6">
+              <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Migration & Family History</h1>
               <hr className="w-full max-md:w-screen" />
-              <div className="flex flex-col gap-6 lg:gap-6 py-4 lg:py-12 max-md:w-screen max-md:px-6">
+              <div className="flex flex-col gap-6 lg:gap-10 py-4 lg:py-12 max-md:w-screen max-md:px-6">
                 <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
                   <p>1.&nbsp;<strong>Have you traveled before?</strong> If<strong>&nbsp;YES,</strong> where have you been to?</p>
                   <input type="text" name="traveled before" id="traveled before" />
@@ -148,32 +149,37 @@ const Loan = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6" >
-            <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px]">Mortgage Property Details </h1>
-            <hr className="w-full max-md:w-screen" />
-            <div className="flex flex-col gap-6 lg:gap-6 py-4 lg:py-12 max-md:w-screen max-md:px-6">
-              <div className="flex max-md:flex-col items-center max-md:items-start gap-2">
-                <p>1.&nbsp;Do you have a property to mortage with us?</p>
-                <input type="text" name="mortgage property" id="mortgage property" required />
+            <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
+              <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Mortgage Property Details </h1>
+              <hr className="w-full max-md:w-screen" />
+              <div className="flex flex-col gap-6 lg:gap-6 py-4 lg:py-12 max-md:w-screen max-md:px-5">
+                <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
+                  <p>1.&nbsp;Do you have a property to mortage with us?</p>
+                  <input type="text" name="mortgage property" id="mortgage property" required />
+                </div>
+                <div className="flex max-md:flex-col items-center gap-2  max-md:items-start lg:gap-0 lg:justify-between">
+                  <p>2.&nbsp;Where is it located?</p>
+                  <input type="text" name="property location" id="property location" required />
+                </div>
+                <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
+                  <p>3.&nbsp;What is the estimated value of the property?</p>
+                  <input type="text" name="property valuation" id="property valuation" required />
+                </div>
+                <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
+                  <p>4.&nbsp;Have you previously taken any loans by mortgaging this property?</p>
+                  <input type="text" name="property valuation" id="property valuation" required />
+                </div>
               </div>
-              <div className="flex max-md:flex-col  items-center max-md:items-start gap-2">
-                <p>2.&nbsp;Where is it located?</p>
-                <input type="text" name="property location" id="property location" required />
-              </div>
-              <div className="flex max-md:flex-col items-center max-md:items-start gap-2">
-                <p>3.&nbsp;What is the estimated value of the property?</p>
-                <input type="text" name="property valuation" id="property valuation" required />
+              <div className="max-md:w-full my-6">
+                <button
+                  type="submit"
+                  className="bg-yellow p-3 w-[170px] max-md:text-xl max-md:w-full rounded-full text-white font-bold"
+                >
+                  Submit
+                </button>
               </div>
             </div>
-            <div className="max-md:w-full mt-6">
-              <button
-                type="submit"
-                className="bg-yellow p-3 w-[170px] max-md:text-xl max-md:w-full rounded-full text-white font-bold"
-              >
-                Submit
-              </button>
-            </div>
+            <p className="text-sm"><span className="text-red-600">*</span>Interest rates are low only for a short period of time </p>
           </div>
         </form>
       </section>

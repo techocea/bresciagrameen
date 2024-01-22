@@ -15,10 +15,10 @@ const WesternUnion = () => {
   });
   return (
     <>
-      <section className="p-16 ">
+      <section className="p-16 max-md:p-8">
         <div data-aos="fade-up" data-aos-duration="2000">
           <h1 className="font-medium text-4xl pb-16">Western Union</h1>
-          <div className="flex items-start justify-center gap-16">
+          <div className="flex max-md:flex-col items-start justify-center gap-16">
             <img
               src={western}
               alt="western"
@@ -26,7 +26,7 @@ const WesternUnion = () => {
               height={500}
               className="border-none rounded-2xl shadow-2xl"
             />
-            <p className="w-[500px] lg:w-[600px] text-xl lg:text-[24px] leading-relaxed text-slate-600">
+            <p className="w-[500px] max-md:w-[300px] lg:w-[600px] text-xl max-md:text-smx lg:text-[24px] leading-relaxed text-slate-600">
               <span className="text-4xl font-semibold capitalize">W</span>e
               understand the importance of staying connected with your loved
               ones and ensuring the seamless transfer of funds, no matter where
@@ -41,31 +41,31 @@ const WesternUnion = () => {
         </div>
       </section>
       <section
-        className="bg-gray p-16"
+        className="bg-gray p-16 max-md:p-8"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <div className="flex items-center gap-10 justify-center capitalize">
+        <div className="flex max-md:flex-col items-center gap-10 max-md:gap-5 justify-center max-md:items-start capitalize">
           <div
-            className="h-[250px] border-r pr-10"
+            className="h-[250px] border-r max-md:border-r-0  pr-10 max-md:pr-0"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <h1 className="text-3xl font-semibold pb-3">The Benefits</h1>
-            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]">
-              <li className="flex gap-2 items-center">
+            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]  max-md:text-smx">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Global Reach
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Speedy Transactions
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Diverse Sending Options
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Reliable Security Measures
               </li>
@@ -79,20 +79,20 @@ const WesternUnion = () => {
             <h1 className="text-3xl font-semibold pb-3">
               How to Send Money with Western Union?
             </h1>
-            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]">
-              <li className="flex gap-2 items-center">
+            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]  max-md:text-smx">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Visit an Agent Location
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;permanent residence
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Online and Mobile Services
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Track Your Transfer
               </li>
@@ -100,9 +100,9 @@ const WesternUnion = () => {
           </div>
         </div>
       </section>
-      <section className=" flex flex-col gap-4 mt-10 p-16">
+      <section className=" flex flex-col gap-4 mt-10 max-md:mt-0 p-16 max-md:p-8">
         <div data-aos="fade-up" data-aos-duration="2000">
-          <h1 className="text-main font-bold text-3xl">Interest Rates</h1>
+          <h1 className="text-main font-bold text-3xl ">Interest Rates</h1>
           <p className="text-xl lg:text-[24px]">
             Please note that due to rapidly fluctuating Interest Rates in the
             market, the Interest Rates are subject to change without notice and

@@ -17,7 +17,7 @@ const Services = () => {
             </h1>
           </div>
           <div data-aos="fade-up" data-aos-duration="2800">
-            <h1 className="text-main text-center text-7xl capitalize">
+            <h1 className="text-main text-center text-7xl max-md:text-4xl capitalize">
               Because we provide...
             </h1>
           </div>
@@ -26,7 +26,7 @@ const Services = () => {
           {serviceData.map((item) => (
             <div
               key={item.id}
-              className="bg-main text-white w-auto flex max-md:flex-col items-center max-md:justify-center max-md:text-center gap-4  p-5 rounded-lg shadow-xl lg:text-2xl capitalize"
+              className="bg-main text-white max-md:text-[18px] w-auto flex max-md:flex-col items-center max-md:justify-center max-md:text-center gap-4 p-4 max-md:p-8 rounded-lg shadow-xl lg:text-2xl capitalize"
               data-aos="fade-up"
               data-aos-duration="2500"
             >
@@ -48,13 +48,13 @@ const Services = () => {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl text-center capitalize">
+          <h1 className="text-4xl text-center capitalize max-md:leading-snug">
             need financial assistance to achieve your dream?
           </h1>
           <div data-aos="fade-up" data-aos-duration="2000">
             <button
               type="button"
-              className="bg-main hover:opacity-60 rounded-lg lg:text-2xl text-white p-4 lg:p-6"
+              className="bg-main hover:opacity-60 rounded-lg lg:text-2xl max-md:text-[18px] text-white p-4 lg:p-6"
             >
               <a href="tel:+94763484719">Talk to us</a>
             </button>

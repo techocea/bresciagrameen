@@ -4,16 +4,22 @@ import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { footerData } from "../data";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <section className="bg-black p-16 max-md:p-4 text-white lg:text-[24px]">
       <div className="flex max-md:flex-col items-center justify-between max-md:justify-normal">
-        <div className="flex flex-col gap-3">
-          <p className="text-2xl">Brescia Grameen</p>
-          <p className="header__p text-[18px] tracking-wider">
-            More than a solution
-          </p>
+        <div className="flex items-center gap-3">
+          <Link to="/">
+            <div className="flex flex-col text-white font-bold">
+              <h1 className="text-2xl lg:text-3xl max-md:text-[16px]">
+                Brescia Grameen
+              </h1>
+              <p className="header__p text-[18px] lg:text-[24px] max-md:text-sm tracking-wider">
+                More than a solution
+              </p>
+            </div>
+          </Link>
         </div>
         <div className="flex items-center gap-10 my-4">
           <a
@@ -34,18 +40,19 @@ const Footer = () => {
             href="https://maps.app.goo.gl/3DGvLhf3hYEM9a519"
             rel="noreferrer"
             target="_blank"
+            className="link"
           >
             No 88/2 Chillaw Road,Kattuwa,Negombo
           </a>
           <br />
           <strong>Hotline:</strong>
-          <a href="tel:0312233329">031 22 33 329</a>
+          <a href="tel:0312233329" className="link">031 22 33 329</a>
           <br />
           <strong>General Number:</strong>
-          <a href="tel:0777711335">077 77 11 335</a>
+          <a href="tel:0777711335" className="link">077 77 11 335</a>
           <br />
           <strong>Email:</strong>
-          <p>info@bresciagrameen.lk</p>
+          <p className="link">info@bresciagrameen.lk</p>
         </div>
         {footerData.map((data) => (
           <div
@@ -57,7 +64,7 @@ const Footer = () => {
               <ul key={index}>
                 <Link
                   to={`/${data.to[index]}`}
-                  className="underline flex flex-col max-md:flex-col max-md:items-start justify-between mt-4"
+                  className="link flex flex-col max-md:flex-col max-md:items-start justify-between mt-4"
                 >
                   {list}
                 </Link>
@@ -66,8 +73,8 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="flex max-md:flex-col  items-center justify-between mt-10">
-        <p>© 2023. Brescia Grameen Pvt Ltd</p>
+      <div className="flex max-md:flex-col border-t border-t-white items-center justify-between mt-10">
+        <p>© 2024. Brescia Grameen Pvt Ltd</p>
         <p>webizera</p>
       </div>
     </section>

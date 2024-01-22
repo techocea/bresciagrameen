@@ -14,7 +14,7 @@ const About = () => {
   });
   return (
     <>
-      <section className="pt-[150px] flex flex-col gap-7 py-24 max-md:py-10">
+      <section className="pt-[150px] flex flex-col gap-7 ">
         <div className="px-20 max-md:px-4">
           <div data-aos="fade-up" data-aos-duration="2000">
             <h1 className="text-4xl lg:text-5xl font-bold text-center pb-6 border-b border-main ">
@@ -85,16 +85,16 @@ const About = () => {
           </div>
         </div>
         <div
-          className="flex flex-col h-full items-center max-md:items-start justify-center max-md:justify-start"
+          className="flex flex-col max-md:py-10 pb-24 max-md:h-[1100px] md:items-center "
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl pb-4 font-bold">Milestone</h1>
-          <div className="">
+          <h1 className="text-4xl pb-4 font-bold max-md:text-center">Milestone</h1>
+          <div className="max-md:px-8 max-md:items-start justify-center max-md:justify-start">
             <div className="w-[24px] h-[24px] bg-black rounded-full hidden" />
             <div className="w-[5px] h-[75px] bg-black  " />
             <div className="flex relative gap-2">
-              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-6  top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
+              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
                 1982&nbsp; Started with a small service
               </div>
               <p className="absolute left-[3rem]  max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
@@ -106,14 +106,13 @@ const About = () => {
               <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
                 1990&nbsp; First Employees
               </div>
-              <p className="absolute right-[3rem] max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
+              <p className="absolute right-[3rem] max-md:left-0  max-md:pb-10 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
                 The entity was growing steadily, and its growth was certain. New
                 office premises was a clear sign of growth.
               </p>
             </div>
-            <div className="w-[5px] h-[150px] bg-black  " />
+            <div className="w-[5px] h-[150px] max-md:h-[250px] bg-black  " />
             <div className="flex relative gap-2">
-
               <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
                 2001&nbsp; First Recognition
               </div>
@@ -122,9 +121,8 @@ const About = () => {
                 a household name in the local community.
               </p>
             </div>
-            <div className="w-[5px] h-[150px] bg-black  " />
+            <div className="w-[5px] h-[150px] max-md:h-[250px] bg-black  " />
             <div className="flex relative gap-2">
-
               <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
                 2014&nbsp; Brescia Grameen Family
               </div>
@@ -134,7 +132,7 @@ const About = () => {
                 the customer base and serve better.
               </p>
             </div>
-            <div className="w-[5px] h-[100px] lg:h-[180px] bg-black " />
+            <div className="w-[5px] h-[150px] max-md:h-[250px] lg:h-[180px] bg-black " />
             <div className="w-[24px] h-[24px] bg-black rounded-full hidden" />
           </div>
         </div>

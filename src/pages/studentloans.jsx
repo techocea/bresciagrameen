@@ -15,10 +15,10 @@ const StudentLoans = () => {
   });
   return (
     <>
-      <section className="p-16 ">
+      <section className="p-16 max-md:p-8">
         <div data-aos="fade-up" data-aos-duration="2000">
           <h1 className="font-medium text-4xl pb-16">Student Loans</h1>
-          <div className="flex items-start justify-center gap-16">
+          <div className="flex max-md:flex-col items-start justify-center gap-16">
             <img
               src={grad}
               alt="grad"
@@ -26,7 +26,7 @@ const StudentLoans = () => {
               height={500}
               className="border-none rounded-2xl shadow-2xl"
             />
-            <p className="w-[500px] lg:w-[600px] text-xl lg:text-[24px] leading-relaxed text-slate-600">
+            <p className="w-[500px] max-md:w-[300px] lg:w-[600px] text-xl max-md:text-smx lg:text-[24px] leading-relaxed text-slate-600">
               <span className="text-4xl font-semibold capitalize">E</span>
               mbarking on a journey to study abroad is an exciting endeavor, and
               we understand the financial challenges that may arise. Here, we
@@ -40,31 +40,31 @@ const StudentLoans = () => {
         </div>
       </section>
       <section
-        className="bg-gray p-16"
+        className="bg-gray p-16 max-md:p-8"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <div className="flex items-center gap-10 justify-center capitalize">
+        <div className="flex max-md:flex-col items-center gap-10 max-md:gap-5 justify-center max-md:items-start capitalize">
           <div
-            className="h-[250px] border-r pr-10 "
+            className="h-[250px] border-r max-md:border-r-0 pr-10 max-md:pr-0"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <h1 className="text-3xl font-semibold pb-3">The Benefits</h1>
-            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]">
-              <li className="flex gap-2 items-center">
+            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]  max-md:text-smx">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;your dream to study abroad
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;minimum documents
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;10-14 days of working process
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;flexible payment methods
               </li>
@@ -78,20 +78,20 @@ const StudentLoans = () => {
             <h1 className="text-3xl font-semibold pb-3">
               Eligibility & Other Info
             </h1>
-            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]">
-              <li className="flex gap-2 items-center">
+            <ul className="flex flex-col gap-3 text-[18px] lg:text-[24px]  max-md:text-smx">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;age above 18 years
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;permanent residence
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;Should have a passport
               </li>
-              <li className="flex gap-2 items-center">
+              <li className="flex gap-2 items-center max-md:items-start">
                 <HiCheck className="text-green-500" />
                 &nbsp;A Security document
               </li>
@@ -99,7 +99,7 @@ const StudentLoans = () => {
           </div>
         </div>
       </section>
-      <section className=" flex flex-col gap-4 mt-10 p-16">
+      <section className=" flex flex-col gap-4 mt-10 max-md:mt-0 p-16 max-md:p-8">
         <div data-aos="fade-up" data-aos-duration="2000">
           <h1 className="text-main font-bold text-3xl">Interest Rates</h1>
           <p className="text-xl lg:text-[24px]">

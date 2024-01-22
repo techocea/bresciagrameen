@@ -25,9 +25,42 @@ p {
 }
 
 option {
-  @apply w-1/4
+  @apply w-[200px]
 }
 
 .form {
   @apply lg:text-[28px]
+}
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.link:hover::before {
+  animation: line 0.3s forwards;
+  /* Apply the line animation on hover */
+  width: 100%;
 }
