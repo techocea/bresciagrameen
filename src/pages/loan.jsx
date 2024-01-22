@@ -23,7 +23,7 @@ const Loan = () => {
   const [yesCountryField, setYesCountryField] = useState(false);
 
 
-  const [state, handleSubmit] = useForm("mrgnbyzn");
+  const [state, handleSubmit] = useForm("xayrngwe");
 
   const handlePurposeChange = (e) => {
     const selected = e.target.value;
@@ -55,7 +55,7 @@ const Loan = () => {
     <>
       <section className="pt-[150px] max-md:pt-[100px] bg-slate-200 p-16 max-md:p-0 max-md:w-screen flex items-center justify-center max-md:flex-col">
         <form
-          action="https://formspree.io/f/mrgnbyzn"
+          action="https://formspree.io/f/xayrngwe"
           method="POST"
           onSubmit={handleSubmit}
           className="w-screen flex flex-col items-center"
