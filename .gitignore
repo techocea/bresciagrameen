@@ -1,0 +1,136 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+//{/* <label>Have you travelled before?</label>
+                  <input
+                    type="radio"
+                    name="travelled before"
+                    id="yes"
+                    value="Yes"
+                    onChange={handlePurposeChange}
+                  />
+                  <label htmlFor="yes">Yes</label>
+                  <input
+                    type="radio"
+                    name="travelled before"
+                    id="no"
+                    value="No"
+                    onChange={handlePurposeChange}
+                  />
+                  <label htmlFor="no">No</label>
+                </div>
+                <div>
+                  {travelField && (
+                    <div className="flex flex-col gap-3 mt-3 w-3/4">
+                      <label>
+                        <span className="text-red-600">*</span>Where have you
+                        been to?
+                      </label>
+                      <input id="migrated" name="migrated" type="text" />
+                    </div>
+                  )} */}
+
+//{/* <div className="flex items-center gap-2 mt-3">
+                  <label>Do you have any relatives abroad?</label>
+                  <input
+                    type="radio"
+                    name="(migrate history)relative abroad"
+                    id="yes"
+                    value="Yes"
+                    onChange={handlePurposeChange}
+                  />
+                  <label htmlFor="yes">Yes</label>
+                  <input
+                    type="radio"
+                    name="(migrate history)relative abroad"
+                    id="no"
+                    value="No"
+                    onChange={handlePurposeChange}
+                  />
+                  <label htmlFor="no">No</label>
+                </div>
+                <div>
+                  {relativeAbroad && (
+                    <div className="flex flex-col gap-3 mt-3 w-3/4">
+                      <label>
+                        <span className="text-red-600">*</span>In which country?
+                      </label>
+                      <input
+                        id="relative abroad"
+                        name="relative abroad"
+                        type="text"
+                      />
+                    </div>
+                  )}
+                </div> 
+                 <div>
+                  <label>
+                    <span className="text-red-600">*</span>If yes , where?
+                  </label>
+                  <input id="relatives" name="relatives" type="text" />
+                </div> */}
+
+                 {/*  <div className="flex items-center justify-between max-md:hidden  ">
+            <nav>
+              <ul className="flex items-center gap-6 text-xl">
+             {navLinks.map((navlink) => (
+                  <li key={navlink.id}>
+                    {navlink.dropdown ? (
+                      <div className="flex items-center gap-1 text-slate-800 text-lg ">
+                        <button
+                          onClick={toggleServicesDropdown}
+                          className="text-black transition hover:text-yellow duration-500 text-xl lg:text-[24px]"
+                        >
+                          {navlink.title}
+                        </button>
+                        {isServicesDropdownOpen && (
+                          <div className="absolute z-10 right-48 top-20 lg:right-40 mt-2 w-[250px] rounded-md shadow-xl bg-white ring-1 ring-black ring-opacity-5">
+                            <div className="py-1 relative">
+                              {serviceData.map((service) => (
+                                <Link
+                                  key={service.id}
+                                  to={service.to}
+                                  className="block px-4 py-2 text-xl text-gray-700 hover:bg-gray-100 hover:text-yellow duration-500"
+                                >
+                                  {service.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <RiArrowDropDownLine />
+                      </div>
+                    ) : (
+                      <Link
+                        to={navlink.to}
+                        className="text-black transition hover:text-yellow text-xl lg:text-[24px]"
+                      >
+                        {navlink.title}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>*/}

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header__p {
+  font-family: "Dancing Script", cursive;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  @apply outline-yellow p-3 rounded-full border border-blue-400 max-md:w-full;
+}
+
+label,
+p {
+  @apply text-[18px] font-medium lg:text-[24px]
+}
+
+option {
+  @apply w-1/4
+}
+
+.form {
+  @apply lg:text-[28px]
+}
