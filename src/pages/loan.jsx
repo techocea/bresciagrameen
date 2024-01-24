@@ -1,52 +1,65 @@
-import React, { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useForm, ValidationError } from "@formspree/react";
-
-
+import React, { useState } from "react";
+import { useForm } from "@formspree/react";
 
 const Loan = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
-  useEffect(() => {
-    Aos.init();
-  });
-
   const [selectedPurpose, setSelectedPurpose] = useState("Select option");
   const [countryField, setCountryField] = useState(false);
-  const [travelField, setTravelField] = useState(false);
-  const [agencyField, setAgencyField] = useState(false);
-  const [relationField, setRelationField] = useState(false);
-  const [supportField, setSupportField] = useState(false);
-  const [yesCountryField, setYesCountryField] = useState(false);
+  // const [travelField, setTravelField] = useState(false);
+  const [liveAbroad, setLiveAbroad] = useState("");
+  const [agencyField, setAgencyField] = useState(null);
+  // const [relationField, setRelationField] = useState(false);
+  const [supportField, setSupportField] = useState(null);
+  const [agencyName, setAgencyName] = useState(null);
+  const [sponsoringMe, setSponsoringMe] = useState(null);
+  const [travelHistory, setTravelHistory] = useState(null);
 
 
   const [state, handleSubmit] = useForm("xayrngwe");
 
   const handlePurposeChange = (e) => {
     const selected = e.target.value;
-    setSelectedPurpose(selected);
 
-    setCountryField(selected === "study_abroad" || selected === "work_abroad");
-    setTravelField(selected === "Yes");
-    setAgencyField(selected === "study_abroad" || selected === "work_abroad");
-    setRelationField(false);
+    setSelectedPurpose(selected);
+    setCountryField(selected === "study_abroad" || selected === "work_abroad");// no need if
+    // setTravelField(selected === "Yes");// no need if
+    setAgencyField(false);// no need if
+    // setRelationField(false);
     setSupportField(false);
-    setYesCountryField(false);
+    setLiveAbroad(false);
+    setAgencyName(false);
+    setSponsoringMe(false);
+    setTravelHistory(false);
 
 
     if (selected === "personal_loan") {
-      setSupportField(true);
-      if (
-        e.target.name = "(personal-loan)relative abroad" &&
-        e.target.value === "Yes"
-      ) {
-        // setRelationField(true)
-        setYesCountryField(true)
-      }
+      setSupportField(true)
     }
+    else if (e.target.name === "relationStatus" && e.target.value === "Yes") {
+      setSupportField(true);
+      setLiveAbroad(true)
+    }
+    else if (e.target.name === "relationStatus" && e.target.value === "No") {
+      setSupportField(true);
+      setLiveAbroad(false);
+    }
+
+    if (e.target.name === "agency/sponsorship" && e.target.value === "Agency") {
+      setAgencyName(true);
+    }
+    if (e.target.name === "agency/sponsorship" && e.target.value === "Sponsorship") {
+      setSponsoringMe(true);
+    }
+
+    if (e.target.name === "traveledBefore" && e.target.value === "Yes") {
+      setTravelHistory(true);
+    }
+
+    // else if (e.target.name === "relationStatus" && e.target.value === "No") {
+    //   setSupportField(true);
+    //   setLiveAbroad(false);
+    // }
+
+
   };
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
@@ -108,29 +121,39 @@ const Loan = () => {
                     onChange={handlePurposeChange}
                     value={selectedPurpose}
                   >
-                    <option value="">Select option</option>
+                    <option value="Select option" disabled>Select option</option>
+                    <option value="personal_loan">Personal Loan</option>
                     <option value="work_abroad">Work Abroad</option>
                     <option value="study_abroad">Study Abroad</option>
-                    <option value="personal_loan">Personal Loan</option>
                   </select>
                 </div>
-                {countryField && (
-                  <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
-                    <label>3.&nbsp;Traveling country?</label>
-                    <input type="text" name="country" id="country" />
-                  </div>
-                )}
+
                 {supportField && (
                   <div className="flex max-md:flex-col gap-6 items-center">
                     <div className="flex max-md:flex-col items-center gap-2">
-                      <p>3.&nbsp;<strong>Do you have a relation in abroad?</strong> If<strong>&nbsp;YES,</strong> where ?</p>
-                      <input type="text" name="traveled before" id="traveled before" />
+                      <label>3.&nbsp;Do you have a relation in abroad who is capabale of doing the payments?</label>
+                      <input type="radio" name="relationStatus" id="yes" value="Yes" onChange={handlePurposeChange} />
+                      <label htmlFor="yes">Yes</label>
+                      <input type="radio" name="relationStatus" id="no" value="No" onChange={handlePurposeChange} />
+                      <label htmlFor="no">No</label>
+                      {/* <input type="text" name="traveled before" id="traveled before" /> */}
                     </div>
-                  </div>)}
-                {agencyField && (
-                  <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
-                    <p>4.&nbsp;Are you traveling through an agency or by sponsorship?</p>
-                    <input type="text" name="agency/sponsorship" id="agency/sponsorship" />
+                  </div>)
+                }
+                {liveAbroad && (
+                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>4.&nbsp;What is the relationship with him/her?</label>
+                      <input type="text" name="relationWith" id="relationWith" />
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <label>5.&nbsp;Where are they living?</label>
+                      <input type="text" name="relationLive" id="relationLive" />
+                    </div>
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>6.&nbsp;What is their occupation?</label>
+                      <input type="text" name="relationOccupation" id="relationOccupation" />
+                    </div>
                   </div>
                 )}
               </div>
@@ -139,14 +162,75 @@ const Loan = () => {
               <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Migration & Family History</h1>
               <hr className="w-full max-md:w-screen" />
               <div className="flex flex-col gap-6 lg:gap-10 py-4 lg:py-12 max-md:w-screen max-md:px-6">
-                <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
-                  <p>1.&nbsp;<strong>Have you traveled before?</strong> If<strong>&nbsp;YES,</strong> where have you been to?</p>
+
+                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                  <label>1.&nbsp;Traveling country?</label>
+                  <input type="text" name="country" id="country" />
+                </div>
+                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                  <label>2.&nbsp;Have you traveled before?</label>
+                  <input type="radio" name="traveledBefore" id="traveledBefore" value="Yes" onChange={handlePurposeChange} />
+                  <label htmlFor="yes">Yes</label>
+                  <input type="radio" name="traveledBefore" id="traveledBefore" value="No" onChange={handlePurposeChange} />
+                  <label htmlFor="no">No</label>
+                </div>
+                {travelHistory && (
+                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>Where have you been to?</label>
+                      <input type="text" name="travelHistory" id="travelHistory" />
+                    </div>
+                  </div>
+                )}
+                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                  <label>3.&nbsp;Do you have any relatives in the country you wish to migrate?</label>
+                  <input type="radio" name="relationAbroad" id="relationAbroad" value="Yes" />
+                  <label htmlFor="yes">Yes</label>
+                  <input type="radio" name="relationAbroad" id="relationAbroad" value="No" />
+                  <label htmlFor="no">No</label>
+                </div>
+
+                <div className="flex gap-2 max-md:flex-col max-md:items-start items-center">
+                  <p>4.&nbsp;Are you traveling through an agency or is someone sponsoring you?</p>
+                  <input type="radio" name="agency/sponsorship" id="agency" value="Agency" onChange={handlePurposeChange} />
+                  <label htmlFor="agency">Agency</label>
+                  <input type="radio" name="agency/sponsorship" id="sponsorship" value="Sponsorship" onChange={handlePurposeChange} />
+                  <label htmlFor="sponsorship">Sponsoring me</label>
+                  <input type="radio" name="agency/sponsorship" id="none" value="None" onChange={handlePurposeChange} />
+                  <label htmlFor="none">None</label>
+                </div>
+                {agencyName && (
+                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>5.&nbsp;What is the name of the agency?</label>
+                      <input type="text" name="agencyName" id="agencyName" />
+                    </div>
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>6.&nbsp;Where is the agency located?</label>
+                      <input type="text" name="agencyLocation" id="agencyLocation" />
+                    </div>
+                  </div>
+                )}
+                {sponsoringMe && (
+                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>3.&nbsp;What is the relationship with him/her?</label>
+                      <input type="text" name="agencyName" id="agencyName" />
+                    </div>
+                    <div className="flex max-md:flex-col items-center gap-2">
+                      <label>4.&nbsp;What is his/her occupation?</label>
+                      <input type="text" name="agencyLocation" id="agencyLocation" />
+                    </div>
+                  </div>
+                )}
+                {/* <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
+                  <p>5.&nbsp;<strong>Have you traveled before?</strong> If<strong>&nbsp;YES,</strong> where have you been to?</p>
                   <input type="text" name="traveled before" id="traveled before" />
                 </div>
                 <div className="flex max-md:flex-col items-center gap-2">
-                  <p>2.&nbsp;<strong>Do you have any relatives </strong>in the country you wish to migrate?</p>
+                  <p>6.&nbsp;<strong>Do you have any relatives </strong>in the country you wish to migrate?</p>
                   <input type="text" name="relatives live in" id="relatives live in" />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
