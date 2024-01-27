@@ -3,16 +3,12 @@ import { useForm } from "@formspree/react";
 
 const Loan = () => {
   const [selectedPurpose, setSelectedPurpose] = useState("Select option");
-  const [countryField, setCountryField] = useState(false);
-  // const [travelField, setTravelField] = useState(false);
-  const [liveAbroad, setLiveAbroad] = useState("");
-  const [agencyField, setAgencyField] = useState(null);
-  // const [relationField, setRelationField] = useState(false);
-  const [supportField, setSupportField] = useState(null);
-  const [agencyName, setAgencyName] = useState(null);
-  const [sponsoringMe, setSponsoringMe] = useState(null);
-  const [travelHistory, setTravelHistory] = useState(null);
-
+  const [liveAbroad, setLiveAbroad] = useState(false);
+  const [supportField, setSupportField] = useState(false);
+  const [agencyName, setAgencyName] = useState(false);
+  const [sponsoringMe, setSponsoringMe] = useState(false);
+  const [travelHistory, setTravelHistory] = useState(false);
+  const [showMigrationDetails, setShowMigrationDetails] = useState(false);
 
   const [state, handleSubmit] = useForm("xayrngwe");
 
@@ -20,47 +16,46 @@ const Loan = () => {
     const selected = e.target.value;
 
     setSelectedPurpose(selected);
-    setCountryField(selected === "study_abroad" || selected === "work_abroad");// no need if
-    // setTravelField(selected === "Yes");// no need if
-    setAgencyField(false);// no need if
-    // setRelationField(false);
-    setSupportField(false);
     setLiveAbroad(false);
+    setSupportField(false);
     setAgencyName(false);
     setSponsoringMe(false);
     setTravelHistory(false);
 
-
     if (selected === "personal_loan") {
-      setSupportField(true)
-    }
-    else if (e.target.name === "relationStatus" && e.target.value === "Yes") {
       setSupportField(true);
-      setLiveAbroad(true)
-    }
-    else if (e.target.name === "relationStatus" && e.target.value === "No") {
+      setShowMigrationDetails(false);
+    } else if (e.target.name === "relationStatus" && e.target.value === "relationStatusYes") {
+      setSupportField(true);
+      setLiveAbroad(true);
+    } else if (e.target.name === "relationStatus" && e.target.value === "relationStatusNo") {
       setSupportField(true);
       setLiveAbroad(false);
     }
 
-    if (e.target.name === "agency/sponsorship" && e.target.value === "Agency") {
-      setAgencyName(true);
-    }
-    if (e.target.name === "agency/sponsorship" && e.target.value === "Sponsorship") {
-      setSponsoringMe(true);
+    if (selected === "work_abroad" || selected === "study_abroad") {
+      setShowMigrationDetails(true);
     }
 
-    if (e.target.name === "traveledBefore" && e.target.value === "Yes") {
+    if (e.target.name === "agency/sponsorship") {
+      if (e.target.value === "Agency") {
+        setAgencyName(true);
+        setSponsoringMe(false);
+      } else if (e.target.value === "Sponsorship") {
+        setSponsoringMe(true);
+        setAgencyName(false);
+      } else {
+        setAgencyName(false);
+        setSponsoringMe(false);
+      }
+    }
+
+
+    if (e.target.name === "traveledBefore" && e.target.value === "traveledBeforeYes") {
       setTravelHistory(true);
     }
-
-    // else if (e.target.name === "relationStatus" && e.target.value === "No") {
-    //   setSupportField(true);
-    //   setLiveAbroad(false);
-    // }
-
-
   };
+
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
   }
@@ -127,16 +122,14 @@ const Loan = () => {
                     <option value="study_abroad">Study Abroad</option>
                   </select>
                 </div>
-
                 {supportField && (
                   <div className="flex max-md:flex-col gap-6 items-center">
                     <div className="flex max-md:flex-col items-center gap-2">
                       <label>3.&nbsp;Do you have a relation in abroad who is capabale of doing the payments?</label>
-                      <input type="radio" name="relationStatus" id="yes" value="Yes" onChange={handlePurposeChange} />
-                      <label htmlFor="yes">Yes</label>
-                      <input type="radio" name="relationStatus" id="no" value="No" onChange={handlePurposeChange} />
-                      <label htmlFor="no">No</label>
-                      {/* <input type="text" name="traveled before" id="traveled before" /> */}
+                      <input type="radio" name="relationStatus" id="relationStatusyes" value="relationStatusYes" onChange={handlePurposeChange} />
+                      <label htmlFor="relationStatusyes">Yes</label>
+                      <input type="radio" name="relationStatus" id="relationStatusno" value="relationStatusNo" onChange={handlePurposeChange} />
+                      <label htmlFor="relationStatusno">No</label>
                     </div>
                   </div>)
                 }
@@ -144,95 +137,88 @@ const Loan = () => {
                   <div className="flex flex-col gap-6 max-md:flex-col items-start">
                     <div className="flex max-md:flex-col items-center gap-2">
                       <label>4.&nbsp;What is the relationship with him/her?</label>
-                      <input type="text" name="relationWith" id="relationWith" />
+                      <input type="text" name="relationWith" id="relationWith" required />
                     </div>
                     <div className="flex items-center justify-center gap-2">
                       <label>5.&nbsp;Where are they living?</label>
-                      <input type="text" name="relationLive" id="relationLive" />
+                      <input type="text" name="relationLive" id="relationLive" required />
                     </div>
                     <div className="flex max-md:flex-col items-center gap-2">
                       <label>6.&nbsp;What is their occupation?</label>
-                      <input type="text" name="relationOccupation" id="relationOccupation" />
+                      <input type="text" name="relationOccupation" id="relationOccupation" required />
                     </div>
                   </div>
                 )}
               </div>
             </div>
-            <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6">
-              <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Migration & Family History</h1>
-              <hr className="w-full max-md:w-screen" />
-              <div className="flex flex-col gap-6 lg:gap-10 py-4 lg:py-12 max-md:w-screen max-md:px-6">
+            {showMigrationDetails && (
+              <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:px-6">
+                <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Migration & Family History</h1>
+                <hr className="w-full max-md:w-screen" />
+                <div className="flex flex-col gap-6 lg:gap-10 py-4 lg:py-12 max-md:w-screen max-md:px-6">
+                  <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                    <label>1.&nbsp;Traveling country?</label>
+                    <input type="text" name="country" id="country" />
+                  </div>
+                  <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                    <label>2.&nbsp;Have you traveled before?</label>
+                    <input type="radio" name="traveledBefore" id="traveledBeforeyes" value="traveledBeforeYes" onChange={handlePurposeChange} />
+                    <label htmlFor="traveledBeforeyes">Yes</label>
+                    <input type="radio" name="traveledBefore" id="traveledBeforeno" value="traveledBeforeNo" onChange={handlePurposeChange} />
+                    <label htmlFor="traveledBeforeno">No</label>
+                  </div>
+                  {travelHistory && (
+                    <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                      <div className="flex max-md:flex-col items-center gap-2">
+                        <label>Where have you been to?</label>
+                        <input type="text" name="travelHistory" id="travelHistory" />
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
+                    <label>3.&nbsp;Do you have any relatives in the country you wish to migrate?</label>
+                    <input type="radio" name="relationAbroad" id="relationAbroadyes" value="relationAbroadYes" />
+                    <label htmlFor="relationAbroadyes">Yes</label>
+                    <input type="radio" name="relationAbroad" id="relationAbroadno" value="relationAbroadNo" />
+                    <label htmlFor="relationAbroadno">No</label>
+                  </div>
 
-                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
-                  <label>1.&nbsp;Traveling country?</label>
-                  <input type="text" name="country" id="country" />
-                </div>
-                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
-                  <label>2.&nbsp;Have you traveled before?</label>
-                  <input type="radio" name="traveledBefore" id="traveledBefore" value="Yes" onChange={handlePurposeChange} />
-                  <label htmlFor="yes">Yes</label>
-                  <input type="radio" name="traveledBefore" id="traveledBefore" value="No" onChange={handlePurposeChange} />
-                  <label htmlFor="no">No</label>
-                </div>
-                {travelHistory && (
-                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
-                    <div className="flex max-md:flex-col items-center gap-2">
-                      <label>Where have you been to?</label>
-                      <input type="text" name="travelHistory" id="travelHistory" />
-                    </div>
+                  <div className="flex gap-2 max-md:flex-col max-md:items-start items-center">
+                    <p>4.&nbsp;Are you traveling through an agency or is someone sponsoring you?</p>
+                    <input type="radio" name="agency/sponsorship" id="agency" value="Agency" onChange={handlePurposeChange} />
+                    <label htmlFor="agency">Agency</label>
+                    <input type="radio" name="agency/sponsorship" id="sponsorship" value="Sponsorship" onChange={handlePurposeChange} />
+                    <label htmlFor="sponsorship">Sponsoring me</label>
+                    <input type="radio" name="agency/sponsorship" id="none" value="None" onChange={handlePurposeChange} />
+                    <label htmlFor="none">None</label>
                   </div>
-                )}
-                <div className="flex gap-6 max-md:flex-col max-md:items-start items-center">
-                  <label>3.&nbsp;Do you have any relatives in the country you wish to migrate?</label>
-                  <input type="radio" name="relationAbroad" id="relationAbroad" value="Yes" />
-                  <label htmlFor="yes">Yes</label>
-                  <input type="radio" name="relationAbroad" id="relationAbroad" value="No" />
-                  <label htmlFor="no">No</label>
+                  {agencyName && (
+                    <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                      <div className="flex max-md:flex-col items-center gap-2">
+                        <label>5.&nbsp;What is the name of the agency?</label>
+                        <input type="text" name="agencyName" id="agencyName" />
+                      </div>
+                      <div className="flex max-md:flex-col items-center gap-2">
+                        <label>6.&nbsp;Where is the agency located?</label>
+                        <input type="text" name="agencyLocation" id="agencyLocation" />
+                      </div>
+                    </div>
+                  )}
+                  {sponsoringMe && (
+                    <div className="flex flex-col gap-6 max-md:flex-col items-start">
+                      <div className="flex max-md:flex-col items-center gap-2">
+                        <label>5.&nbsp;What is the relationship with him/her?</label>
+                        <input type="text" name="sponsorRelation" id="sponsorRelation" />
+                      </div>
+                      <div className="flex max-md:flex-col items-center gap-2">
+                        <label>6.&nbsp;What is his/her occupation?</label>
+                        <input type="text" name="sponsorResidence" id="sponsorResidence" />
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                <div className="flex gap-2 max-md:flex-col max-md:items-start items-center">
-                  <p>4.&nbsp;Are you traveling through an agency or is someone sponsoring you?</p>
-                  <input type="radio" name="agency/sponsorship" id="agency" value="Agency" onChange={handlePurposeChange} />
-                  <label htmlFor="agency">Agency</label>
-                  <input type="radio" name="agency/sponsorship" id="sponsorship" value="Sponsorship" onChange={handlePurposeChange} />
-                  <label htmlFor="sponsorship">Sponsoring me</label>
-                  <input type="radio" name="agency/sponsorship" id="none" value="None" onChange={handlePurposeChange} />
-                  <label htmlFor="none">None</label>
-                </div>
-                {agencyName && (
-                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
-                    <div className="flex max-md:flex-col items-center gap-2">
-                      <label>5.&nbsp;What is the name of the agency?</label>
-                      <input type="text" name="agencyName" id="agencyName" />
-                    </div>
-                    <div className="flex max-md:flex-col items-center gap-2">
-                      <label>6.&nbsp;Where is the agency located?</label>
-                      <input type="text" name="agencyLocation" id="agencyLocation" />
-                    </div>
-                  </div>
-                )}
-                {sponsoringMe && (
-                  <div className="flex flex-col gap-6 max-md:flex-col items-start">
-                    <div className="flex max-md:flex-col items-center gap-2">
-                      <label>3.&nbsp;What is the relationship with him/her?</label>
-                      <input type="text" name="agencyName" id="agencyName" />
-                    </div>
-                    <div className="flex max-md:flex-col items-center gap-2">
-                      <label>4.&nbsp;What is his/her occupation?</label>
-                      <input type="text" name="agencyLocation" id="agencyLocation" />
-                    </div>
-                  </div>
-                )}
-                {/* <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
-                  <p>5.&nbsp;<strong>Have you traveled before?</strong> If<strong>&nbsp;YES,</strong> where have you been to?</p>
-                  <input type="text" name="traveled before" id="traveled before" />
-                </div>
-                <div className="flex max-md:flex-col items-center gap-2">
-                  <p>6.&nbsp;<strong>Do you have any relatives </strong>in the country you wish to migrate?</p>
-                  <input type="text" name="relatives live in" id="relatives live in" />
-                </div> */}
               </div>
-            </div>
+            )}
             <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
               <h1 className="form font-bold text-yellow text-xl pb-2 max-md:text-[22px] max-md:text-center">Mortgage Property Details </h1>
               <hr className="w-full max-md:w-screen" />
@@ -251,7 +237,7 @@ const Loan = () => {
                 </div>
                 <div className="flex max-md:flex-col items-center gap-2 lg:gap-0 lg:justify-between">
                   <p>4.&nbsp;Have you previously taken any loans by mortgaging this property?</p>
-                  <input type="text" name="property valuation" id="property valuation" required />
+                  <input type="text" name="before loans" id="before loans" required />
                 </div>
               </div>
               <div className="max-md:w-full my-6">
@@ -263,7 +249,7 @@ const Loan = () => {
                 </button>
               </div>
             </div>
-            <p className="text-sm"><span className="text-red-600">*</span>Interest rates are low only for a short period of time </p>
+            <small><span className="text-red-600">*</span>Interest rates are low only for a short period of time </small>
           </div>
         </form>
       </section>
