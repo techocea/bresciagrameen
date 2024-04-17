@@ -6,21 +6,18 @@ import "aos/dist/aos.css";
 
 const About = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
-  useEffect(() => {
     Aos.init();
   });
   return (
     <>
-      <section className="pt-[150px] flex flex-col gap-7 ">
+      <section className="py-16 flex flex-col gap-7 ">
         <div className="px-20 max-md:px-4">
           <div data-aos="fade-up" data-aos-duration="2000">
             <h1 className="text-4xl lg:text-5xl font-bold text-center pb-6 border-b border-main ">
               Brescia – The <span className="text-green-800">success</span> of
               Kattuwa and Beyond…
             </h1>
+
             <p className="text-center text-xl lg:text-[28px] leading-relaxed pt-6">
               With a rich history spanning 16 years, Brescia Grameen has been a
               beacon of financial stability and reliability in Negombo. Our team
@@ -89,7 +86,9 @@ const About = () => {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl pb-4 font-bold max-md:text-center">Milestone</h1>
+          <h1 className="text-4xl pb-4 font-bold max-md:text-center">
+            Milestone
+          </h1>
           <div className="max-md:px-8 max-md:items-start justify-center max-md:justify-start">
             <div className="w-[24px] h-[24px] bg-black rounded-full hidden" />
             <div className="w-[5px] h-[75px] bg-black  " />
@@ -117,8 +116,8 @@ const About = () => {
                 2001&nbsp; First Recognition
               </div>
               <p className="absolute left-[3rem] max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
-                Success at its peak. After being in the industry, the company was
-                a household name in the local community.
+                Success at its peak. After being in the industry, the company
+                was a household name in the local community.
               </p>
             </div>
             <div className="w-[5px] h-[150px] max-md:h-[250px] bg-black  " />

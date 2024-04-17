@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { navLinks } from "../data";
@@ -6,16 +5,15 @@ import { Link } from "react-router-dom";
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { FaTimes } from "react-icons/fa";
 const Header = () => {
-
   const [nav, setNav] = useState(true);
 
   const handleNav = () => {
     setNav(!nav);
-  }
+  };
 
   return (
     <>
-      <header className="fixed w-screen max-h-full z-20 bg-white flex items-center justify-between  shadow-lg py-4 mb-[100px] lg:py-8 px-24 max-md:px-4">
+      <header className=" bg-white flex items-center justify-between shadow-lg py-4  lg:py-8 px-24 max-md:px-4">
         <div className="w-full flex z-2 h-full items-center justify-between gap-8">
           <div className="flex items-center gap-3">
             <Link to="/">
@@ -38,29 +36,44 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-8 max-md:hidden lg:text-[24px]">
             {navLinks.map((navItem) => (
-              <Link to={navItem.to} className="hover:text-yellow duration-150 font-semibold"> {navItem.title}</Link>
+              <Link
+                to={navItem.to}
+                className="hover:text-yellow duration-150 font-semibold"
+              >
+                {" "}
+                {navItem.title}
+              </Link>
             ))}
           </div>
         </div>
         <div onClick={handleNav} className="cursor-pointer md:hidden">
           {!nav ? (
-            <FaTimes className="text-yellow" size={26} />) : (<HiBars3BottomLeft className="text-yellow font-bold" size={32} />
+            <FaTimes className="text-yellow" size={26} />
+          ) : (
+            <HiBars3BottomLeft className="text-yellow font-bold" size={32} />
           )}
           <div
-            className={`${!nav
-              ? "bg-white fixed z-[16] h-full left-0 top-[97px] w-full ease-in duration-500"
-              : "fixed left-[-100%]"}`}
+            className={`${
+              !nav
+                ? "bg-white fixed z-[16] h-full left-0 top-[97px] w-full ease-in duration-500"
+                : "fixed left-[-100%]"
+            }`}
           >
             <div className="flex flex-col items-center gap-8 translate-y-1/2">
               {navLinks.map((navItem) => (
-                <Link to={navItem.to} className="text-yellow text-2xl duration-150 font-semibold"> {navItem.title}</Link>
+                <Link
+                  to={navItem.to}
+                  className="text-yellow text-2xl duration-150 font-semibold"
+                >
+                  {" "}
+                  {navItem.title}
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </header>
     </>
-
   );
 };
 

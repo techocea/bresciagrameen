@@ -21,15 +21,15 @@ select {
 
 label,
 p {
-  @apply text-[18px] font-medium lg:text-[24px]
+  @apply text-[18px] font-medium lg:text-[24px];
 }
 
 option {
-  @apply w-[200px]
+  @apply w-[200px];
 }
 
 .form {
-  @apply lg:text-[28px]
+  @apply lg:text-[28px];
 }
 
 @keyframes line {

@@ -5,13 +5,13 @@ import Westernunion from "./westernunion";
 import Goldpawning from "./goldpawning";
 
 const Services = () => {
-    return (
-        <div className="pt-[80px]">
-            <Migrationloans />
-            <StudentLoans />
-            <Westernunion />
-            <Goldpawning />
-        </div>
-    )
-}
+  return (
+    <>
+      <Migrationloans />
+      <StudentLoans />
+      <Westernunion />
+      <Goldpawning />
+    </>
+  );
+};
 export default Services;
