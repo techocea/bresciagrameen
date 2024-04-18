@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { TiTick } from "react-icons/ti";
+import { useEffect } from "react";
 
 const ThankYou = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="flex flex-col gap-y-4 text-center items-center justify-center border border-yellow rounded-lg p-4 w-[550px]">

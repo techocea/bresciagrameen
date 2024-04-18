@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 
 import Services from "./pages/services";
+import ThankYou from "./components/ThankYou";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "loans",
         element: <Loan />,
+      },
+      {
+        path: "thankyou",
+        element: <ThankYou />,
       },
     ],
   },
