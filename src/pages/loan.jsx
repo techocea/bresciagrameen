@@ -12,7 +12,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import ThankYou from "../components/ThankYou";
 
 const Loan = () => {
-  const [state, handleSubmit] = useForm("myyrlylq");
+  const [state, handleSubmit] = useForm("xdoqygbz");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,16 +35,28 @@ const Loan = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handlePropertyChange = (e) => {
+  const handlePropertyChange = async (e) => {
     e.preventDefault();
     const { value } = e.target;
 
-    if (value === "Yes") {
-      console.log({ property: "yes" });
-    } else if (value === "No") {
-      console.log({ property: "no" });
-    }
+    // if (value === "Yes") {
+    //   console.log({ property: "yes" });
+    // } else if (value === "No") {
+    //   console.log({ property: "no" });
+    // }
     setFormData({ ...formData, property: value });
+    if (value === "Yes" || value === "No") {
+      try {
+        const response = await handleSubmit(e);
+        if (response.success) {
+          console.log("Form submitted successfully");
+        } else {
+          console.error("Form submission failed:", response);
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+      }
+    }
   };
 
   return (
@@ -65,13 +77,14 @@ const Loan = () => {
               Hi! we would like to get to know you
             </h2>
             <Form
-              action="https://formspree.io/f/myyrlylq"
+              action="https://formspree.io/f/xdoqygbz"
               method="POST"
-              onSubmit={(e) =>
-                handleSubmit(e).then(() => {
-                  console.log(formData);
-                })
-              }
+              onSubmit={handleSubmit}
+              // onSubmit={(e) =>
+              //   handleSubmit(e).then(() => {
+              //     console.log(formData);
+              //   })
+              // }
             >
               <div className=" grid grid-cols-2 gap-3 max-md:grid-cols-1 relative">
                 <div className="w-[260px] max-md:w-full relative">
