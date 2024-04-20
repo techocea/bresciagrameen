@@ -13,13 +13,14 @@ import ThankYou from "../components/ThankYou";
 
 const Loan = () => {
   const [state, handleSubmit] = useForm("myyrlylq");
-  // const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
     city: "",
     amount: "",
     purpose: "",
+    property: "",
   });
   if (state.succeeded) {
     return (
@@ -28,10 +29,22 @@ const Loan = () => {
       </div>
     );
   }
-  const handlePurposeChange = (e) => {
+  const handleInputChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handlePropertyChange = (e) => {
+    e.preventDefault();
+    const { value } = e.target;
+
+    if (value === "Yes") {
+      console.log({ property: "yes" });
+    } else if (value === "No") {
+      console.log({ property: "no" });
+    }
+    setFormData({ ...formData, property: value });
   };
 
   return (
@@ -54,10 +67,14 @@ const Loan = () => {
             <Form
               action="https://formspree.io/f/myyrlylq"
               method="POST"
-              onSubmit={handleSubmit}
+              onSubmit={(e) =>
+                handleSubmit(e).then(() => {
+                  console.log(formData);
+                })
+              }
             >
               <div className=" grid grid-cols-2 gap-3 max-md:grid-cols-1 relative">
-                <div className="w-[260px] relative">
+                <div className="w-[260px] max-md:w-full relative">
                   <input
                     type="text"
                     id="name"
@@ -66,7 +83,7 @@ const Loan = () => {
                     className="w-full rounded-full border outline-0 p-2 "
                     required
                     value={formData.name}
-                    onChange={handlePurposeChange}
+                    onChange={handleInputChange}
                   />
                   <BiUser
                     size={28}
@@ -78,7 +95,7 @@ const Loan = () => {
                     errors={state.errors}
                   />
                 </div>
-                <div className="w-[260px] relative">
+                <div className="w-[260px] max-md:w-full relative">
                   <input
                     type="text"
                     id="contact"
@@ -87,7 +104,7 @@ const Loan = () => {
                     className="w-full rounded-full border outline-0 p-2 "
                     required
                     value={formData.contact}
-                    onChange={handlePurposeChange}
+                    onChange={handleInputChange}
                   />
                   <BsFillTelephoneFill
                     size={28}
@@ -99,7 +116,7 @@ const Loan = () => {
                     errors={state.errors}
                   />
                 </div>
-                <div className="w-[260px] relative">
+                <div className="w-[260px] max-md:w-full relative">
                   <input
                     type="text"
                     id="city"
@@ -108,7 +125,7 @@ const Loan = () => {
                     className="w-full rounded-full border outline-0 p-2 "
                     required
                     value={formData.city}
-                    onChange={handlePurposeChange}
+                    onChange={handleInputChange}
                   />
                   <BiBuildingHouse
                     size={28}
@@ -120,7 +137,7 @@ const Loan = () => {
                     errors={state.errors}
                   />
                 </div>
-                <div className="w-[260px] relative">
+                <div className="w-[260px] max-md:w-full relative">
                   <input
                     type="text"
                     id="amount"
@@ -129,7 +146,7 @@ const Loan = () => {
                     className="w-full rounded-full border outline-0 p-2 "
                     required
                     value={formData.amount}
-                    onChange={handlePurposeChange}
+                    onChange={handleInputChange}
                   />
                   <BiMoney
                     size={28}
@@ -148,7 +165,7 @@ const Loan = () => {
                   id="purpose"
                   className="w-full rounded-full border outline-0 p-2"
                   value={formData.purpose}
-                  onChange={handlePurposeChange}
+                  onChange={handleInputChange}
                   required
                 >
                   <option
@@ -167,11 +184,31 @@ const Loan = () => {
                   size={28}
                   className="text-yellow absolute right-6 top-3 bottom-4"
                 />
+                <div className="lg:w-[520px] relative mt-4 px-2 flex max-md:flex-col justify-between">
+                  <label className="">Do you have a land to mortgage?</label>
+                  <div className="flex gap-x-4">
+                    <input
+                      type="radio"
+                      name="property"
+                      value="Have property"
+                      onChange={handlePropertyChange}
+                    />
+                    <label htmlFor="propertyYes">Yes</label>
+                    <input
+                      type="radio"
+                      name="property"
+                      value="No property"
+                      onChange={handlePropertyChange}
+                    />
+                    <label htmlFor="propertyNo">No</label>
+                  </div>
+                </div>
               </div>
               <div className="w-full mt-4">
                 <button
                   type="submit"
                   disabled={state.submitting}
+                  aria-disabled="true"
                   className="bg-yellow max-md:w-full hover:opacity-75 p-2 w-full text-white font-bold rounded-full"
                 >
                   Proceed
