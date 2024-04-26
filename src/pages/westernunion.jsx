@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CTA from "../components/CTA";
+import Button from "../components/Button";
 import { HiCheck } from "react-icons/hi";
 import western from "../assets/western.jpg";
 import Aos from "aos";
@@ -111,7 +111,7 @@ const WesternUnion = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <CTA />
+          <Button />
         </div>
       </section>
     </>

@@ -1,48 +1,30 @@
-import React, { useEffect } from "react";
-import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import mainBG from "../assets/main-img.jpeg";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import heroImg from "../assets/heroImg.png";
+import Button from "./Button";
+
 const Hero = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
-    <section className="">
-      <div className="w-full flex items-center justify-center gap-10 lg:gap-24">
-        <div className=" bg-gradient-to-r from-black to-slate-500 mb-14 max-md:mb-0 lg:mb-20">
-          <img
-            src={mainBG}
-            alt="main-img"
-            className="w-screen h-[500px] max-md:h-[calc(100vh-127px)] lg:h-[600px] object-cover border-none   brightness-50"
-          />
-          <div className="relative">
-            <div className="leading-[100px] absolute left-16 max-md:left-8 bottom-16">
-              <h1 className="text-[100px] max-md:text-[46px] lg:text-[120px] lg:leading-[150px] max-md:leading-[4rem] text-white font-bold capitalize">
-                brescia
-                <br /> grameen
-              </h1>
-              <div className="mt-6 max-md:mt-2 pl-4 max-md:pl-2 lg:pt-10">
-                <Link to="/about">
-                  <p className="text-white  hover:text-slate-400 text-xl max-md:text-[22px] flex items-center gap-3 lg:text-3xl font-medium">
-                    Discover
-                    <span className="w-[50px] h-[50px] flex items-center justify-center bg-gray rounded-full">
-                      <HiArrowRight width={24} className="text-black" />
-                    </span>
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </div>
+    <div className="relative w-full">
+      <img
+        src={heroImg}
+        alt="heroImg"
+        className="relative max-md:h-screen object-cover"
+      />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/4 flex flex-col gap-y-5 max-md:gap-y-10 items-center justify-center">
+        <h1 className="text-[57px] max-sm:text-2xl leading-[60px] text-center text-white w-[680px] max-md:w-auto">
+          Empowering Dreams Through Financial Support and Guidance
+        </h1>
+        <p className=" text-white font-medium w-[610px] max-sm:max-w-[315px] text-center">
+          We understand the importance of financial support when it comes to
+          pursuing your dreams of migration, study, and work{" "}
+        </p>
+        <div className="">
+          <Link to="loans">
+            <Button variant="default">Get Started</Button>
+          </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

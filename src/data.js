@@ -1,33 +1,42 @@
-import { IoMdAirplane } from "react-icons/io";
-import { FaUserGraduate } from "react-icons/fa6";
-import { FaDollarSign } from "react-icons/fa6";
-// import { BsCurrencyExchange } from "react-icons/bs";
-import { FaBalanceScale } from "react-icons/fa";
+import { IoDiamondOutline } from "react-icons/io5";
+import { TbTargetArrow } from "react-icons/tb";
+import { TiEyeOutline } from "react-icons/ti";
+
+import logo from "./assets/logo.png";
 
 export const serviceData = [
   {
     id: 1,
-    to: "/services",
-    title: "Migration Loans",
-    icons: IoMdAirplane,
+    title: "Core Values",
+    description: "Demonstrating client-focused trustworthiness and excellence",
+    icons: IoDiamondOutline,
   },
   {
     id: 2,
-    to: "/services",
-    title: "Student Loans",
-    icons: FaUserGraduate,
+    title: "Mission",
+    description: "Be the premier provider Of superior financial solutions",
+    icons: TbTargetArrow,
   },
 
   {
     id: 3,
-    to: "/services",
-    title: "Western union",
-    icons: FaDollarSign,
-  }, {
-    id: 5,
-    to: "/services",
-    title: "Gold Pawning",
-    icons: FaBalanceScale,
+    title: "Vision",
+    description: "To be the most preferred Financial Service Brand",
+    icons: TiEyeOutline,
+  },
+];
+
+export const aboutSupportData = [
+  {
+    topics: ["Why Choose Us?", "Our Approach"],
+    points: [
+      "Flexible and Affordable funding options",
+      "Quick and Hassle-Free application process",
+      "Expert Guidance and Support",
+      "Personalized Financial Solutions",
+      "Transparent and Fair Terms",
+      "Timely Disbursement of Funds",
+    ],
   },
 ];
 
@@ -42,9 +51,7 @@ export const footerData = [
     id: 2,
     title: "services",
     to: ["services", "services", "services", "services"],
-    lists: [
-      "Our services",
-    ],
+    lists: ["Our services"],
   },
   {
     id: 3,
@@ -114,25 +121,32 @@ export const loanData = [
     ],
   },
 ];
+
 export const navLinks = [
   {
     id: 1,
-    to: "/",
-    title: "Home",
+    name: "About",
+    to: "/about",
   },
   {
     id: 2,
-    to: "/about",
-    title: "About",
+    name: "Services",
+    to: "/services",
+    services: ["Work Visa", "Student Visa", "Tourist Visa", "Show Money"],
   },
   {
     id: 3,
-    to: "/services",
-    title: "Services",
+    image: logo,
+    to: "/",
   },
   {
     id: 4,
+    name: "News",
+    to: "/news",
+  },
+  {
+    id: 5,
+    name: "Contact",
     to: "/loans",
-    title: "Loan",
   },
 ];

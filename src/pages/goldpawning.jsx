@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CTA from "../components/CTA";
+import Button from "../components/Button";
 import { HiCheck } from "react-icons/hi";
 import gold from "../assets/gold.jpg";
 import lady from "../assets/lady.jpg";
@@ -93,7 +93,7 @@ const GoldPawning = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <CTA />
+          <Button />
         </div>
       </section>
     </>

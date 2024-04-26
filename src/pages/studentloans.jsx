@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CTA from "../components/CTA";
+import Button from "../components/Button";
 import grad from "../assets/grad.jpg";
 import { HiCheck } from "react-icons/hi";
 import Aos from "aos";
@@ -110,7 +110,7 @@ const StudentLoans = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <CTA />
+          <Button />
         </div>
       </section>
     </>

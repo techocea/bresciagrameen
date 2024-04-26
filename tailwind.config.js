@@ -6,12 +6,11 @@ module.exports = {
       colors: {
         main: "#020D28",
         yellow: "#f68020",
-        gray: "#D9D9D9",
+        gray: "#4A4848",
       },
-    },
-    screens: {
-      lg: "1600px",
-      md: "440px",
+      screens: {
+        sm: "440px",
+      },
     },
   },
   plugins: [],

@@ -18,7 +18,7 @@ const About = () => {
               Kattuwa and Beyond…
             </h1>
 
-            <p className="text-center text-xl lg:text-[28px] leading-relaxed pt-6">
+            <p className="text-center md:text-lg max-sm:text-[16px] leading-relaxed pt-6">
               With a rich history spanning 16 years, Brescia Grameen has been a
               beacon of financial stability and reliability in Negombo. Our team
               of seasoned professionals is dedicated to assisting individuals in
@@ -43,7 +43,7 @@ const About = () => {
               <img src={grp} alt="group" width={500} height={650} />
             </div>
             <div data-aos="fade-left" data-aos-duration="2000">
-              <h1 className="text-7xl text-center lg:text-8xl max-md:text-4xl font-bold w-[400px] max-md:w-[310px] lg:w-[600px] leading-[100px] lg:leading-[120px]">
+              <h1 className="text-7xl text-center lg:text-5xl max-md:text-4xl font-bold w-[400px] max-md:w-[310px] lg:w-[600px] leading-[100px] lg:leading-[120px]">
                 <span className="text-yellow">Brescia</span>&nbsp;Group of
                 Companies
               </h1>
@@ -51,7 +51,7 @@ const About = () => {
           </div>
           <div className="flex flex-col gap-8 ">
             <div data-aos="fade-up" data-aos-duration="2000">
-              <p className="text-left text-xl lg:text-[28px] leading-relaxed">
+              <p className="text-left md:text-lg max-sm:text-[16px] leading-relaxed">
                 Brescia Grameen serves our valued customers like a bank.
                 <strong>
                   We take only half the processing time as compared to banks if
@@ -86,46 +86,46 @@ const About = () => {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h1 className="text-4xl pb-4 font-bold max-md:text-center">
+          <h1 className="md:text-lg max-sm:text-[16px] pb-4 font-bold max-md:text-center">
             Milestone
           </h1>
           <div className="max-md:px-8 max-md:items-start justify-center max-md:justify-start">
             <div className="w-[24px] h-[24px] bg-black rounded-full hidden" />
             <div className="w-[5px] h-[75px] bg-black  " />
             <div className="flex relative gap-2">
-              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
+              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white md:text-lg max-sm:text-[16px] font-bold">
                 1982&nbsp; Started with a small service
               </div>
-              <p className="absolute left-[3rem]  max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
+              <p className="absolute left-[3rem]  max-md:left-0 md:text-lg max-sm:text-[16px] top-16 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
                 First Step in a long journey
               </p>
             </div>
             <div className="w-[5px] h-[150px] bg-black  " />
             <div className="flex relative gap-2">
-              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
+              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white md:text-lg max-sm:text-[16px] font-bold">
                 1990&nbsp; First Employees
               </div>
-              <p className="absolute right-[3rem] max-md:left-0  max-md:pb-10 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
+              <p className="absolute right-[3rem] max-md:left-0  max-md:pb-10 md:text-lg max-sm:text-[16px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
                 The entity was growing steadily, and its growth was certain. New
                 office premises was a clear sign of growth.
               </p>
             </div>
             <div className="w-[5px] h-[150px] max-md:h-[250px] bg-black  " />
             <div className="flex relative gap-2">
-              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
+              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute left-[3rem] max-md:left-0 top-[-1rem] p-2 text-white md:text-lg max-sm:text-[16px] font-bold">
                 2001&nbsp; First Recognition
               </div>
-              <p className="absolute left-[3rem] max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
+              <p className="absolute left-[3rem] max-md:left-0 md:text-lg max-sm:text-[16px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
                 Success at its peak. After being in the industry, the company
                 was a household name in the local community.
               </p>
             </div>
             <div className="w-[5px] h-[150px] max-md:h-[250px] bg-black  " />
             <div className="flex relative gap-2">
-              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white lg:text-[24px] font-bold">
+              <div className="bg-yellow h-[55px] max-md:h-auto w-[500px] lg:w-[600px] max-md:w-[310px] absolute right-[3rem] max-md:left-0 top-[-1rem] p-2 text-white md:text-lg max-sm:text-[16px] font-bold">
                 2014&nbsp; Brescia Grameen Family
               </div>
-              <p className="absolute right-[3rem] max-md:left-0 lg:text-[24px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
+              <p className="absolute right-[3rem] max-md:left-0 md:text-lg max-sm:text-[16px] top-10 w-[500px] lg:w-[600px] max-md:w-[310px] pl-2 text-slate-800">
                 Able to provide clients cutting edge service with the aid of
                 information technology. A small step in a giant stride to expand
                 the customer base and serve better.

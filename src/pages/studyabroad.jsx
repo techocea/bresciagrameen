@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import CTA from "../components/CTA";
+import Button from "../components/Button";
 import money from "../assets/money.webp";
 import lady from "../assets/lady.jpg";
 import { HiCheck } from "react-icons/hi";
@@ -96,7 +96,7 @@ const MoneyExchange = () => {
           </p>
         </div>
         <div data-aos="fade-up" data-aos-duration="2000">
-          <CTA />
+          <Button />
         </div>
       </section>
     </>
