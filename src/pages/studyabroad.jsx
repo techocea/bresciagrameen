@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Button from "../components/Button";
+import Button from "../utils/Button";
 import money from "../assets/money.webp";
 import lady from "../assets/lady.jpg";
 import { HiCheck } from "react-icons/hi";
@@ -11,7 +11,7 @@ const MoneyExchange = () => {
   return (
     <>
       <section className="p-16 ">
-        <div data-aos="fade-up" data-aos-duration="2000">
+        <div>
           <h1 className="font-medium lg:w-[600px] text-xl lg:text-[24px] pb-16">
             Money Exchange
           </h1>
@@ -35,17 +35,9 @@ const MoneyExchange = () => {
           </div>
         </div>
       </section>
-      <section
-        className="bg-gray p-16"
-        data-aos="fade-up"
-        data-aos-duration="2000"
-      >
+      <section className="bg-gray p-16">
         <div className="flex items-center gap-10 justify-center  capitalize">
-          <div
-            className="h-[250px]"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
+          <div className="h-[250px]">
             <h1 className="text-3xl font-semibold pb-3">The Benefits</h1>
             <ul className="grid grid-cols-2 gap-3 text-[18px] lg:text-[24px] ">
               <li className="flex gap-2 items-start">
@@ -70,11 +62,7 @@ const MoneyExchange = () => {
               </li>
             </ul>
           </div>
-          <div
-            className="h-[250px]"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
+          <div className="h-[250px]">
             <img
               src={lady}
               alt="lady"
@@ -86,7 +74,7 @@ const MoneyExchange = () => {
         </div>
       </section>
       <section className=" flex flex-col gap-4 mt-10 p-16">
-        <div data-aos="fade-up" data-aos-duration="2000">
+        <div>
           <h1 className="text-main font-bold text-3xl">Interest Rates</h1>
           <p className="text-xl lg:text-[24px]">
             Please note that due to rapidly fluctuating Interest Rates in the
@@ -95,7 +83,7 @@ const MoneyExchange = () => {
             Telephone No: 076 3 484 719 for current Interest Rates.
           </p>
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000">
+        <div>
           <Button />
         </div>
       </section>

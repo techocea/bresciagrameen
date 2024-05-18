@@ -1,9 +1,9 @@
 import { footerData } from "../data";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <section className="bg-black p-16 max-md:p-4 text-white xl:text-lg md:text-sm">
+    <section className="bg-gray p-16 max-md:p-4 border-t border-yellow text-white xl:text-lg md:text-sm">
       <div className="flex max-md:flex-col ">
         <div className="flex  gap-3">
           <Link to="/">
@@ -60,12 +60,10 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="flex max-md:flex-col border-t border-t-white items-center justify-between mt-10">
+      <div className="flex max-md:flex-col border-t border-t-yellow items-center justify-between mt-10 py-3">
         <p>© 2024. Brescia Grameen Pvt Ltd</p>
         <p>webizera</p>
       </div>
     </section>
   );
-};
-
-export default Footer;
+}

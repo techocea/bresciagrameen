@@ -4,11 +4,15 @@ import "./index.css";
 import App from "./App";
 import About from "./pages/about";
 import Loan from "./pages/loan";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
-
-import Services from "./pages/services";
 import News from "./pages/news";
+import Migrationloans from "./pages/migrationloans";
+import Studentloans from "./pages/studentloans";
+import Showmoney from "./pages/showmoney";
+import Westernunion from "./pages/westernunion";
+import Goldpawning from "./pages/goldpawning";
+
+import Layout from "./utils/Layout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -24,16 +28,32 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "services",
-        element: <Services />,
+        path: "services/migration-loan",
+        element: <Migrationloans />,
       },
       {
-        path: "loans",
-        element: <Loan />,
+        path: "services/student-loan",
+        element: <Studentloans />,
+      },
+      {
+        path: "services/show-money",
+        element: <Showmoney />,
+      },
+      {
+        path: "services/western-union",
+        element: <Westernunion />,
+      },
+      {
+        path: "services/gold-pawning",
+        element: <Goldpawning />,
       },
       {
         path: "news",
         element: <News />,
+      },
+      {
+        path: "loans",
+        element: <Loan />,
       },
     ],
   },
@@ -51,10 +71,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     <Routes>
 //       <Route path="/" element={<App />} />
 //       <Route path="/about" element={<About />} />
-//       <Route path="/services" element={<Services />} />
-//       <Route path="/loans" element={<Loan />} >
-//         <Route path="user-info" element={<userInfo/>}/>
-//       </Route>
+//       <Route path="/news" element={<News />} />
+//       <Route path="/loans" element={<Loan />} />
 //     </Routes>
 //     <Footer />
 //   </BrowserRouter>

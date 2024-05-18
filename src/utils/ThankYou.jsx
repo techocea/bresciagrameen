@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { TiTick } from "react-icons/ti";
 import { useEffect } from "react";
 
-const ThankYou = () => {
+export default function ThankYou() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -21,6 +21,4 @@ const ThankYou = () => {
       </div>
     </>
   );
-};
-
-export default ThankYou;
+}

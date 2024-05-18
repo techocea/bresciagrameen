@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import heroImg from "../assets/heroImg.png";
-import Button from "./Button";
+import Button from "../utils/Button";
 
-const Hero = () => {
+export default function Hero() {
   return (
     <div className="relative w-full">
       <img
@@ -26,6 +26,4 @@ const Hero = () => {
       </div>
     </div>
   );
-};
-
-export default Hero;
+}

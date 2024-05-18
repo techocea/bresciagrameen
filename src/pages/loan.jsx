@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form } from "react-router-dom";
 import { ValidationError, useForm } from "@formspree/react";
 
@@ -9,9 +9,13 @@ import { BiBuildingHouse, BiMoney, BiUser } from "react-icons/bi";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
-import ThankYou from "../components/ThankYou";
+import ThankYou from "../utils/ThankYou";
 
 const Loan = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [state, handleSubmit] = useForm("xdoqygbz");
 
   const [formData, setFormData] = useState({

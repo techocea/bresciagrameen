@@ -6,10 +6,11 @@ module.exports = {
       colors: {
         main: "#020D28",
         yellow: "#f68020",
-        gray: "#4A4848",
-      },
-      screens: {
-        sm: "440px",
+        "yellow-600": "#e7610f",
+        gray: "#333333",
+        // gray: "#4A4848",
+        "gray-950": "#272625",
+        // /F2F1F2
       },
     },
   },

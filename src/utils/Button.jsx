@@ -1,4 +1,4 @@
-const Button = ({ className, children, variant }) => {
+export default function Button({ className, children, variant }) {
   const variants = {
     outline:
       "px-5 py-3 border border-yellow text-yellow hover:bg-yellow hover:text-white",
@@ -12,6 +12,4 @@ const Button = ({ className, children, variant }) => {
     ? ` ${variantStyles} ${className}`
     : ` ${variantStyles}`;
   return <button className={buttonClasses}>{children}</button>;
-};
-
-export default Button;
+}

@@ -1,7 +1,7 @@
 import handShake from "../assets/handShake.png";
-import SuccessCard from "./SuccessCard";
+import SuccessCard from "../utils/SuccessCard";
 
-const Success = () => {
+export default function Success() {
   return (
     <>
       <div className="relative">
@@ -18,6 +18,4 @@ const Success = () => {
       </div>
     </>
   );
-};
-
-export default Success;
+}

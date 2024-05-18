@@ -131,8 +131,7 @@ export const navLinks = [
   {
     id: 2,
     name: "Services",
-    to: "/services",
-    services: ["Work Visa", "Student Visa", "Tourist Visa", "Show Money"],
+    to: null,
   },
   {
     id: 3,

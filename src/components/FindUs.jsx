@@ -1,7 +1,7 @@
 import { MdEmail, MdMeetingRoom } from "react-icons/md";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import Button from "../utils/Button";
 import {
   FaFacebookMessenger,
   FaFacebookSquare,
@@ -9,9 +9,9 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
-import Map from "./Map";
+import Map from "../utils/Map";
 
-const FindUs = () => {
+export default function FindUs() {
   return (
     <div className="bg-[#b7b6b6] h-full px-20 max-sm:px-5 lg:px-52">
       <div className="flex flex-col gap-y-5 py-20 items-center justify-center">
@@ -77,6 +77,4 @@ const FindUs = () => {
       </div>
     </div>
   );
-};
-
-export default FindUs;
+}

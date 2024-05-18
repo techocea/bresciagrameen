@@ -1,4 +1,4 @@
-function Map() {
+export default function Map() {
   return (
     <div>
       <div className="w-full">
@@ -17,5 +17,3 @@ function Map() {
     </div>
   );
 }
-
-export default Map;
