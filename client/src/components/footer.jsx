@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-dark-gray border-t border-light-gray">
-      <div className="flex flex-col gap-6 items-start p-10 xl:px-16 lg:py-12">
+      <div className="flex flex-col gap-6 items-start p-10 2xl:px-0 lg:py-12 2xl:max-w-5xl 2xl:w-full 2xl:mx-auto">
         <div className="flex items-center justify-between w-full">
           <img src={logo} width={100} height={50} alt="brescia grameen logo" />
           <div className="flex gap-5">

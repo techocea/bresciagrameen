@@ -10,9 +10,9 @@ import { IoEyeOutline } from "react-icons/io5";
 
 const About = () => {
   return (
-    <section className="bg-white max-md:p-5 lg:px-16 lg:py-14 max-md:h-auto lg:max-w-7xl">
-      <div className="flex items-start max-md:flex-col max-md:gap-6">
-        <div className="bg-black p-8 lg:max-w-[580px] w-full flex flex-wrap gap-4">
+    <section className="bg-white max-md:p-5 lg:px-16 lg:py-14 ">
+      <div className="flex items-start max-md:flex-col max-md:gap-6 2xl:max-w-5xl 2xl:mx-auto w-full">
+        <div className="bg-black p-8 lg:max-w-[580px]  w-full flex flex-wrap gap-4">
           <AboutCard
             icon={<IoDiamondOutline size={32} />}
             title="Core Values"
@@ -28,17 +28,16 @@ const About = () => {
             title="Vision"
             description="To be the most preferred Financial Service Brand"
           />
-          <div className="bg-primary-orange w-[240px] hidden lg:flex"></div>
         </div>
-        <div className="flex flex-col flex-1 px-10 py-16 lg:py-0 max-md:px-0 lg:px-12 gap-4 max-md:gap-8 lg:gap-6">
-          <h1 className="text-black text-4xl max-md:text-2xl font-bold">
+        <div className=" flex flex-col flex-1 px-10 py-16 lg:py-6 gap-4 max-md:gap-8">
+          <h1 className="text-black lg:text-4xl text-2xl 2xl:text-2xl font-bold">
             Brescia Grameen, financial aid for migration
           </h1>
-          <p className="text-light-gray a lg:text-[20px]">
+          <p className="text-light-gray">
             We're here to help people solve their biggest problem of migrating
             to another country for work, studies, or even to get settled.
           </p>
-          <p className="text-light-gray font-medium">
+          <p className="text-light-gray">
             With a rich history spanning 16 years, Brescia Grameen has been a
             beacon of financial stability and reliability in Negombo. Our team
             of seasoned professionals is dedicated to assisting individuals in
@@ -52,13 +51,7 @@ const About = () => {
               </button>
             </Link>
           </div>
-          <div className="flex flex-col gap-4 mt-4 lg:mt-0">
-            <img
-              src={customers}
-              width={142}
-              height={40}
-              alt="customers group"
-            />
+          <div className="mt-4 lg:mt-0">
             <p className="font-bold text-lg text-black">
               <span className="text-green-600">5000+</span> trusted customers
             </p>
