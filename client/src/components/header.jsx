@@ -148,6 +148,7 @@ const Header = ({ isTransparent }) => {
                   </div>
                 </li>
                 <li>
+                
                   <NavLink
                     to="/news"
                     className={`${
