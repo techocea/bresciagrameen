@@ -2,13 +2,21 @@ import React from "react";
 
 import customers from "../assets/mains/customers.png";
 import plane from "../assets/mains/plane.png";
-
+import main from "../assets/mains/20.jpg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="bg-dark-gray max-md:p-10 lg:px-16 lg:py-14 max-md:h-auto">
-      <div className="relative flex">
+    <section className="relative px-10 lg:px-16 py-28 lg:py-32 h-[600px] w-full z-[-10] -mt-24">
+      <div className="absolute inset-0 z-0 ">
+        <img
+          src={main}
+          alt="Brescia Grameen Main image"
+          className="top-0 z-[-20] w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-50" />
+      </div>
+      <div className="relative flex z-10">
         <div className="lg:max-w-[775px] w-full flex flex-col gap-6 max-md:gap-8">
           <motion.h1
             initial={{ opacity: 0, scale: 0 }}
@@ -24,7 +32,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
-            className="text-light-gray font-semibold"
+            className="text-white font-semibold"
           >
             A customer-focused financial provider that provides financial
             solutions to meet your entire financial needs

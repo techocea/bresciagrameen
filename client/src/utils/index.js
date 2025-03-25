@@ -5,6 +5,17 @@ import italianFlag from "../assets/flags/italian-flag.png";
 import ukFlag from "../assets/flags/UK-flag.jpg";
 import usaFlag from "../assets/flags/usa-flag.jpg";
 
+//update images - 10th anniversary
+import anniversary101 from "../assets/news/39.jpg";
+import anniversary102 from "../assets/news/55.jpg";
+import anniversary103 from "../assets/news/56.jpg";
+import anniversary104 from "../assets/news/67.jpg";
+import anniversary105 from "../assets/news/110.jpg";
+import anniversary106 from "../assets/news/173.jpg";
+import anniversary107 from "../assets/news/176.jpg";
+import anniversary108 from "../assets/news/189.jpg";
+import anniversary109 from "../assets/news/218.jpg";
+
 //update images - 9th anniversary
 import anniversary01 from "../assets/news/9th-an-1.jpg";
 import anniversary02 from "../assets/news/9th-an-2.jpg";
@@ -148,6 +159,42 @@ export const newsImages = {
     {
       name: "anniversary06",
       source: anniversary06,
+    },
+    {
+      name: "anniversary101",
+      source: anniversary101,
+    },
+    {
+      name: "anniversary102",
+      source: anniversary102,
+    },
+    {
+      name: "anniversary103",
+      source: anniversary103,
+    },
+    {
+      name: "anniversary104",
+      source: anniversary104,
+    },
+    {
+      name: "anniversary105",
+      source: anniversary105,
+    },
+    {
+      name: "anniversary106",
+      source: anniversary106,
+    },
+    {
+      name: "anniversary107",
+      source: anniversary107,
+    },
+    {
+      name: "anniversary108",
+      source: anniversary108,
+    },
+    {
+      name: "anniversary109",
+      source: anniversary109,
     },
   ],
   trip: [

@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section className="bg-white max-md:p-5 lg:px-16 lg:py-14 max-md:h-auto lg:max-w-7xl">
       <div className="flex items-start max-md:flex-col max-md:gap-6">
-        <div className="bg-black p-8 max-w-[580px] flex flex-wrap gap-4">
+        <div className="bg-black p-8 lg:max-w-[580px] w-full flex flex-wrap gap-4">
           <AboutCard
             icon={<IoDiamondOutline size={32} />}
             title="Core Values"

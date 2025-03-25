@@ -48,7 +48,7 @@ const About = () => {
               src={bresciaLiquor}
               width={400}
               height={400}
-              className="object-contain"
+              className="object-cover"
               alt="bresciaLiquor"
             />
             <h1 className="capitalize text-white font-bold italic  text-4xl pt-6 lg:pt-0">

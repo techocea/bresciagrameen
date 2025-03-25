@@ -20,6 +20,7 @@ import ErrorPage from "./components/error-page";
 const Layout = () => {
   const location = useLocation();
   const transparentRoutes = [
+    "/",
     "/services/work-visa",
     "/services/student-visa",
     "/services/study-abroad",
@@ -30,7 +31,7 @@ const Layout = () => {
     <div>
       <Header isTransparent={isTransparent} />
       <Routes>
-        <Route exact path="/" element={<App />} />
+        <Route index element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/services/work-visa" element={<WorkVisa />} />
         <Route path="/services/student-visa" element={<StudentVisa />} />

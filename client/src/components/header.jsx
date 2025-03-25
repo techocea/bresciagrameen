@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-
 import logo from "../assets/mains/anniversary-logo.png";
-
+import samplePDF from "../assets/pdf/sample.pdf";
 import { FaRegUser } from "react-icons/fa";
 import { TfiMenu } from "react-icons/tfi";
 import { FaTimes } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
-
+import { GoDownload } from "react-icons/go";
 import Modal from "./modal";
 
 const Header = ({ isTransparent }) => {
   const { pathname } = useLocation();
-  const [showModal, setShowModal] = useState(false);
   const [nav, setNav] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   const handleShowPopup = () => {
@@ -80,11 +79,15 @@ const Header = ({ isTransparent }) => {
         </ul>
       </nav>
       <div className="flex items-center gap-4">
-        <div>
-          <button className="flex items-center gap-2 bg-primary-orange hover:bg-opacity-90 text-white rounded-lg py-1.5 px-2">
-            <FaRegUser />
-            Login
-          </button>
+        <div className="">
+          <a
+            href={samplePDF}
+            download="Brescia Grameen 10th Anniversary Book"
+            className="flex items-center justify-center gap-x-2 hover:text-primary-orange"
+          >
+            <GoDownload />
+            Download
+          </a>
         </div>
 
         {/* mobile navigation */}
@@ -106,8 +109,9 @@ const Header = ({ isTransparent }) => {
                 <li>
                   <NavLink
                     to="/"
-                    exact
-                    activeClassName="text-yellow-500"
+                    className={`${
+                      pathname === "/" ? "text-primary-orange" : ""
+                    }`}
                     onClick={() => setNav(false)}
                   >
                     Home
@@ -116,7 +120,9 @@ const Header = ({ isTransparent }) => {
                 <li>
                   <NavLink
                     to="/about"
-                    activeClassName="text-yellow-500"
+                    className={`${
+                      pathname === "/about" ? "text-primary-orange" : ""
+                    }`}
                     onClick={() => setNav(false)}
                   >
                     About
@@ -144,7 +150,9 @@ const Header = ({ isTransparent }) => {
                 <li>
                   <NavLink
                     to="/news"
-                    activeClassName="text-yellow-500"
+                    className={`${
+                      pathname === "/news" ? "text-primary-orange" : ""
+                    }`}
                     onClick={() => setNav(false)}
                   >
                     News
@@ -153,7 +161,9 @@ const Header = ({ isTransparent }) => {
                 <li>
                   <NavLink
                     to="/contact"
-                    activeClassName="text-yellow-500"
+                    className={`${
+                      pathname === "/contact" ? "text-primary-orange" : ""
+                    }`}
                     onClick={() => setNav(false)}
                   >
                     Contact
