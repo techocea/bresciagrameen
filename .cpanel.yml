@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export NODE_VERSION=18
+    - /opt/cpanel/nodejs/${NODE_VERSION}/bin/npm install
+    - /opt/cpanel/nodejs/${NODE_VERSION}/bin/npm run build
+    - /opt/cpanel/nodejs/${NODE_VERSION}/bin/npm run start
